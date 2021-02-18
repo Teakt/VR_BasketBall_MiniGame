@@ -19704,6 +19704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_manager: {fileID: 1082962829}
+  countdownTime: 5
+  countdown: 0
 --- !u!1 &720257797
 GameObject:
   m_ObjectHideFlags: 0
