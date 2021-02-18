@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 {
     [Header("[Score Management]")]
     [SerializeField] private Text score_text;
+    [SerializeField] private Button reset_score_button;
     [SerializeField] private GameObject basket_checker; // object placed in basket checking if a ball marked or not 
 
     public int score_Player { get; set; } // the score is saved and modified here
@@ -38,5 +39,10 @@ public class ScoreManager : MonoBehaviour
     public void SetScore(int score) //  et de même pour OnScoreChange avec le score. 
     {
         score_Player= score;
+    }
+
+    public void ResetScore()
+    {
+        score_Player = 0;
     }
 }
