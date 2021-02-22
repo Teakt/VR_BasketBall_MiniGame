@@ -15,12 +15,25 @@ public class Ball : MonoBehaviour
     private float countdown ;
     bool count = false;
 
+    [Header("[Variables related to the double checker]")]
+    [SerializeField]
+    private bool checked_top ;
+    [SerializeField]
+    private bool checked_bot;
+    
+
+
+    [SerializeField] private ScoreManager score_manager;
+
     void Awake() // We save the initial position of the ball when its spawned 
     {
+        score_manager = FindObjectOfType<ScoreManager>();
         initial_position = this.transform.position;
 
         // We initalize the countdown
-        countdown = countdown_time; 
+        countdown = countdown_time;
+        checked_top = false;
+        checked_bot = false; 
     }
   
 
@@ -38,6 +51,8 @@ public class Ball : MonoBehaviour
            
 
         }
+        //we check if the double chek for the rim condition is fulfilled
+        
     }
 
     public void Respawn()
@@ -49,6 +64,8 @@ public class Ball : MonoBehaviour
         countdown = countdown_time;
         count = false;
         this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        checked_top = false; //resets the checkers
+        checked_bot = false;
         this.gameObject.SetActive(true);
     }
 
@@ -62,5 +79,23 @@ public class Ball : MonoBehaviour
            
         }
         
+    }
+
+    private void OnTriggerEnter(Collider checker)
+    {
+        if (checker.gameObject.CompareTag("Checker1")) // check if the ball enters the rim
+        {
+
+            checked_top = true;
+
+        }
+        if (checker.gameObject.CompareTag("Checker2") && checked_top) // check if the ball enters the net after entering the top
+        {
+
+            checked_bot = true;
+
+            score_manager.SetScore(score_manager.GetScore() + 1);
+        }
+       
     }
 }
