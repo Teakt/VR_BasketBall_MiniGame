@@ -14,12 +14,12 @@ public class BasketChecker : MonoBehaviour
     [SerializeField]
     private float countdown;
     bool count = false;
-    GameObject temp; 
-    protected  void Awake()
+    GameObject temp;
+    protected void Awake()
     {
 
         countdown = countdownTime;
-
+    }
 
 
 
