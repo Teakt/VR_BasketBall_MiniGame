@@ -13,6 +13,7 @@ TagManager:
   - Torso
   - Head
   - Ball
+  - Plane
   layers:
   - Default
   - TransparentFX

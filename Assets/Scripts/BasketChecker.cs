@@ -40,7 +40,7 @@ public class BasketChecker : MonoBehaviour
         if (countdown <= 0.0f)
         {
 
-            temp.SetActive(false);
+            temp.GetComponent<Ball>().Respawn();
             count = false;
             countdown = countdownTime;
 
