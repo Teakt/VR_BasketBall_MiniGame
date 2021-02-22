@@ -24,11 +24,7 @@ public class BallSpawner : MonoBehaviour
     
 
 
-    [SerializeField]
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
