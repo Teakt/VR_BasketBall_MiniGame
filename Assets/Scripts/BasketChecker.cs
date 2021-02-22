@@ -14,21 +14,14 @@ public class BasketChecker : MonoBehaviour
     [SerializeField]
     private float countdown;
     bool count = false;
-    GameObject temp; 
-    protected  void Awake()
+    GameObject temp;
+    protected void Awake()
     {
 
         countdown = countdownTime;
-
-
-
-
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -40,7 +33,7 @@ public class BasketChecker : MonoBehaviour
         if (countdown <= 0.0f)
         {
 
-            temp.SetActive(false);
+            temp.GetComponent<Ball>().Respawn();
             count = false;
             countdown = countdownTime;
 
