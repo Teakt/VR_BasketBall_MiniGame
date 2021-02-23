@@ -14,8 +14,8 @@ public class ScoreManager : MonoBehaviour
     public int score_Player { get; set; } // the score is saved and modified here
    
     /*-----------------------------------------------------------------------------*/
-    public delegate void OnScoreChangeEvent(int score);
-    public event OnScoreChangeEvent OnScoreChange;
+   // public delegate void OnScoreChangeEvent(int score);
+    //public event OnScoreChangeEvent OnScoreChange;
 
     // Start is called before the first frame update
     void Start()

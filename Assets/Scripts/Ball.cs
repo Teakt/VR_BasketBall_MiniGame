@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class Ball : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class Ball : MonoBehaviour
 
     [SerializeField] private ScoreManager score_manager;
 
+
+    [SerializeField] private VRTK_InteractableObject interact_object;
+
     void Awake() // We save the initial position of the ball when its spawned 
     {
         score_manager = FindObjectOfType<ScoreManager>();
@@ -33,7 +37,9 @@ public class Ball : MonoBehaviour
         // We initalize the countdown
         countdown = countdown_time;
         checked_top = false;
-        checked_bot = false; 
+        checked_bot = false;
+
+        interact_object = GetComponent<VRTK_InteractableObject>();
     }
   
 
@@ -48,10 +54,11 @@ public class Ball : MonoBehaviour
         {
 
             Respawn();
-           
-
+  
         }
         //we check if the double chek for the rim condition is fulfilled
+        
+
         
     }
 
@@ -63,7 +70,7 @@ public class Ball : MonoBehaviour
         this.transform.position = initial_position;
         countdown = countdown_time;
         count = false;
-        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; // reset physics
         checked_top = false; //resets the checkers
         checked_bot = false;
         this.gameObject.SetActive(true);
@@ -83,19 +90,24 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider checker)
     {
-        if (checker.gameObject.CompareTag("Checker1")) // check if the ball enters the rim
+        if (!interact_object.IsGrabbed())
         {
+            if (checker.gameObject.CompareTag("Checker1")) // check if the ball enters the rim
+            {
 
-            checked_top = true;
+                checked_top = true;
 
+            }
+            if (checker.gameObject.CompareTag("Checker2") && checked_top) // check if the ball enters the net after entering the top
+            {
+
+                //checked_bot = true;
+
+                score_manager.SetScore(score_manager.GetScore() + 1);
+            }
         }
-        if (checker.gameObject.CompareTag("Checker2") && checked_top) // check if the ball enters the net after entering the top
-        {
-
-            checked_bot = true;
-
-            score_manager.SetScore(score_manager.GetScore() + 1);
-        }
+        
+       
        
     }
 }
