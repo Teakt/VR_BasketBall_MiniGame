@@ -3196,7 +3196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activationButton: 10
   activationMode: 0
-  selectionButton: 7
+  selectionButton: 3
   clickMethod: 1
   attemptClickOnDeactivate: 0
   clickAfterHoverDuration: 0
@@ -16226,7 +16226,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550052892}
   m_LocalRotation: {x: -0.21643952, y: 0, z: 0, w: 0.97629607}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 305}
   m_LocalScale: {x: 1.5108, y: 1.5108, z: 1.5108}
   m_Children:
   - {fileID: 1806875413}
@@ -16236,7 +16236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -25, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 34, y: 1581}
+  m_AnchoredPosition: {x: 34.000004, y: 933.99994}
   m_SizeDelta: {x: 195.4, y: 190.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550052894
@@ -33130,7 +33130,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077978793}
   m_LocalRotation: {x: -0.2164395, y: -0, z: -0, w: 0.976296}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 305}
   m_LocalScale: {x: 1.5113424, y: 1.5113413, z: 1.5113423}
   m_Children:
   - {fileID: 33020138}
@@ -33139,7 +33139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -25, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 34.000008, y: 1581.0002}
+  m_AnchoredPosition: {x: 34, y: 934}
   m_SizeDelta: {x: 195.40002, y: 190.40002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077978795
@@ -51098,6 +51098,7 @@ GameObject:
   - component: {fileID: 1408711853}
   - component: {fileID: 1408711852}
   - component: {fileID: 1408711851}
+  - component: {fileID: 1408711857}
   m_Layer: 0
   m_Name: LeftControllerScriptAlias
   m_TagString: Untagged
@@ -51275,7 +51276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabButton: 7
+  grabButton: 3
   grabPrecognition: 0
   throwMultiplier: 1
   createRigidBodyWhenNotTouching: 0
@@ -51295,6 +51296,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customColliderContainer: {fileID: 0}
+--- !u!114 &1408711857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408711848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTeleport: 1
+  targetListPolicy: {fileID: 0}
+  pointerRenderer: {fileID: 0}
+  activationButton: 10
+  holdButtonToActivate: 1
+  activateOnEnable: 0
+  activationDelay: 0
+  selectionButton: 3
+  selectOnPress: 0
+  selectionDelay: 0
+  selectAfterHoverDuration: 0
+  interactWithObjects: 0
+  grabToPointerTip: 0
+  attachedTo: {fileID: 0}
+  controllerEvents: {fileID: 0}
+  interactUse: {fileID: 0}
+  customOrigin: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!1 &1412981472
 GameObject:
   m_ObjectHideFlags: 0
