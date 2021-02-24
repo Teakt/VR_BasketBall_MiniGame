@@ -21,7 +21,14 @@ public class Ball : MonoBehaviour
     private bool checked_top ;
     [SerializeField]
     private bool checked_bot;
-    
+
+    [Header("[Sounds effects related to ball]")]
+    [SerializeField]
+    private AudioSource audio_source;
+
+    public AudioClip success_sound_clip;
+
+
 
 
     [SerializeField] private ScoreManager score_manager;
@@ -40,6 +47,8 @@ public class Ball : MonoBehaviour
         checked_bot = false;
 
         interact_object = GetComponent<VRTK_InteractableObject>();
+
+        audio_source = GetComponent<AudioSource>();
     }
   
 
@@ -79,11 +88,12 @@ public class Ball : MonoBehaviour
     // We have to manage the ball when it hits the ground , it waits a bit then disapear
     void OnCollisionEnter(Collision ball)
     {
+        
         // Destroy everything that leaves the trigger
         if (ball.gameObject.CompareTag("ExcludeTeleport"))
         {
             count = true;
-           
+            audio_source.Play();
         }
         
     }
@@ -104,6 +114,7 @@ public class Ball : MonoBehaviour
                 //checked_bot = true;
 
                 score_manager.SetScore(score_manager.GetScore() + 1);
+                audio_source.PlayOneShot(success_sound_clip);
             }
         }
         
