@@ -27,7 +27,7 @@ public class BallSpawner : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Instantiate at position (0, 0, 0) and zero rotation.
         

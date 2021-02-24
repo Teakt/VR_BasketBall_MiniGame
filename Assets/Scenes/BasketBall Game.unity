@@ -66281,7 +66281,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852780529}
-  - component: {fileID: 1852780528}
   m_Layer: 0
   m_Name: ContainerPrefab (1)
   m_TagString: Untagged
@@ -66289,23 +66288,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1852780528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852780527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1767b24ce91bdcc4182ee4faa3c6e1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTime: 5
-  delay_spawn: 5
-  max_balls: 5
-  ball_prefab: {fileID: 8223671109746714742, guid: e176bfac369e27246b29dc7da75b9ba8,
-    type: 3}
 --- !u!4 &1852780529
 Transform:
   m_ObjectHideFlags: 0
@@ -74314,7 +74296,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2065207884}
-  - component: {fileID: 2065207885}
   m_Layer: 0
   m_Name: ContainerPrefab
   m_TagString: Untagged
@@ -74342,23 +74323,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &2065207885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065207883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1767b24ce91bdcc4182ee4faa3c6e1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTime: 5
-  delay_spawn: 5
-  max_balls: 5
-  ball_prefab: {fileID: 8223671109746714742, guid: e176bfac369e27246b29dc7da75b9ba8,
-    type: 3}
 --- !u!1 &2066617479
 GameObject:
   m_ObjectHideFlags: 0
