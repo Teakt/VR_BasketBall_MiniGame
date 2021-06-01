@@ -27,7 +27,7 @@ public class Container : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Instantiate at position (0, 0, 0) and zero rotation.
 
@@ -50,7 +50,7 @@ public class Container : MonoBehaviour
 
     public void SpawnBall()
     {
-        if (current_number_balls <= max_balls) //we check if we exceeded the number max of balls
+        if (current_number_balls < max_balls) //we check if we exceeded the number max of balls
         {
             GameObject prefab = Instantiate(ball_prefab, this.transform.position, Quaternion.identity); // at this object position allows the ball to be spawned at the same place in every prefab of the container
             //prefab.GetComponent<Rigidbody>().AddForce(Vector3.down);
